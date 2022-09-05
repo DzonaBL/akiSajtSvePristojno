@@ -1,0 +1,442 @@
+/* [INITIAL SETUP] */
+
+/*colors*/
+:root {
+    --blue: #1e90ff;
+    --white: #e7e7e7;
+    --black: #161616;
+    --red: #d82828;
+    --green: #48a148;
+    --yellow: #e7e752;
+    --purple: #852a85;
+}
+
+/*html and body*/
+html, body {
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    background-image: url(https://images.unsplash.com/photo-1585834565211-2bf75c296c59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*font*/
+p, h1, h2, h3, a {
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*setions and fancy scroll*/
+.bigDaddy {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    scroll-snap-align: center;
+}
+
+
+/* [NAVIGATION] */
+
+.navigation {
+    position: fixed;
+    z-index: 200;
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation > a {
+    display: inline-block;
+    position: relative;
+    color: var(--black);
+    font-size: 30px;
+    transition: transform .2s ease-in-out;
+}
+
+.navigation > a:after {
+    background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: var(--black);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  }
+
+.navigation > a:hover:after {
+    width: 100%; 
+  left: 0;
+}
+
+
+
+
+/* [HOME] */
+
+#home {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home > div {
+    padding-right: 40%;
+}
+
+#home > div > h1 {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+#home > div > p {
+    font-size: 25px;
+}
+
+
+/* [SKILLS] */
+
+#skill {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#skill > h2 {
+    font-size: 35px;
+}
+
+#skill > div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#skill > div > div {
+    background: rgba(255, 255, 255, 0.13);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.2px);
+-webkit-backdrop-filter: blur(6.2px);
+
+padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: 0.5s;
+}
+
+#skill > div > div:nth-of-type(1):hover {
+    background: #776672BA;
+}
+#skill > div > div:nth-of-type(2):hover {
+    background: #9F5FBDBA;
+}
+#skill > div > div:nth-of-type(3):hover {
+    background: #00ABD5BA;
+}
+
+#skill > div > div > img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+#skill > div > div > p {
+    font-size: 25px;
+}
+
+
+
+/* [ABOUT ME] */
+
+#about {
+    overflow-y: scroll;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#about > div {
+    max-width: 500px;
+    height: 67.5675675676%;
+}
+
+#about > div:first-of-type, #about > div > img, #about > div > a {
+    background: rgba(255, 255, 255, 0.13);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.2px);
+-webkit-backdrop-filter: blur(6.2px);
+}
+
+#about > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#about > div:first-of-type {
+    padding: calc(2.5027027027% / 2);
+    height: calc(67.5675675676% - (2 * 2.5027027027%));
+}
+
+#about > div > h2 {
+    font-size: 45px;
+}
+
+#about > div > p {
+    font-size: 4.05405405405vmin;
+}
+
+#about > div > img {
+    height: 50%;
+    object-fit: contain;
+}
+
+#about > div > a {
+    transition: 0.4s;
+    display: flex;
+    text-align: center;
+    height: calc(45% / 3);
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    color: var(--black);
+    font-weight: 800;
+}
+
+#about > div > a:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+
+
+/* [MY WORK] */
+
+#mywork {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mywork > div {
+    border-radius: 16px;
+    display: grid; 
+  grid-auto-rows: 200px; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 20px 20px; 
+  grid-template-areas: 
+    ". . ."; 
+    justify-items: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+#mywork > div > a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+    align-self: center;
+}
+
+.material-symbols-sharp {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+#mywork > div > a > img {
+    border-radius: 16px;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: 0.3s;
+}
+
+#mywork > div {
+    height: 80%;
+    overflow-y: scroll;
+    margin: 20px;
+}
+
+#mywork > div > a > span {
+    z-index: 5;
+    color: var(--white);
+    font-size: 80px;
+    visibility: hidden;
+}
+
+#mywork > div > a:hover > img {
+    filter: blur(3px);
+}
+
+#mywork > div > a:hover > span {
+    visibility: visible;
+}
+
+
+/* [RESPONSIVITY] */
+
+@media only screen and (max-width: 950px) {
+    #mywork > div {
+        grid-auto-rows: 160px; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px 20px; 
+  grid-template-areas: 
+    ". ."; 
+    }
+    #mywork > div > a {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    #about {
+        padding-top: 20%;
+        background-image: url(../assets/aki.jpg);
+        background-position: center;
+        background-size: cover;
+        flex-direction: column;
+    }
+    #about > div:nth-of-type(1) {
+        height: 50%;
+        align-self: center;
+        width: 80%;
+    }
+    #about > div:nth-of-type(2) {
+        justify-content: flex-start;
+        width: 80%;
+    }
+    #about > div:nth-of-type(2) > img {
+        display: none;
+    }
+
+    #about > div:first-of-type, #about > div > img, #about > div > a {
+        background: rgba(255, 255, 255, 0.281);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    }
+
+    #mywork > div {
+        grid-auto-rows: 120px; 
+  grid-template-columns: 1fr; 
+  gap: 20px 20px; 
+  grid-template-areas: 
+    "."; 
+    }
+    #mywork > div > a {
+        width: 220px;
+    }
+
+    #skill > div {
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    #skill > div > div {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .navigation {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 520px) {
+    #skill > div > div > img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media only screen and (max-height: 275px) {
+    #skill > div > div > img {
+        width: 25px;
+        height: 25px;
+    }
+    #skill > div > div > p {
+        font-size: 15px;
+    }
+}
+
+
+
+
+/* LOGIN AND UPLOAD*/
+
+#login, #login > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+
+#upload, #upload > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+#upload > form > input {
+    margin-bottom: 15px;
+}
+
+#upload > form > input:first-of-type {
+    height: 30px;
+    width: 200px;
+    border-radius: 16px;
+    border: 0;
+}
